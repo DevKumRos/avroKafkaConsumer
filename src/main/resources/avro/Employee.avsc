@@ -1,0 +1,11 @@
+{
+   "namespace": "com.kumar.domain.generated",
+   "type": "record",
+   "name": "Employee",
+   "fields": [
+      {"name": "empId", "type": "int"},
+      {"name": "empName", "type": "string"},
+      {"name": "department", "type": "string"},
+      {"name": "age", "type": "int", "default": 26}
+   ]
+}
