@@ -6,6 +6,9 @@
       {"name": "empId", "type": "int"},
       {"name": "empName", "type": "string"},
       {"name": "department", "type": "string"},
-      {"name": "age", "type": "int", "default": 26}
+      {"name": "age", "type": "int", "default": 26},
+      { "name": "empStatus", "type": ["null",
+                                  { "type": "enum", "name": "Status","symbols": ["ONLINE", "OFFLINE", "TRANSISENT"] }
+                  ] }
    ]
 }

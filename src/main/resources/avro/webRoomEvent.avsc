@@ -1,0 +1,31 @@
+{
+  "type" : "record",
+  "name" : "WebRoomEventAvro",
+  "namespace" : "com.kumar.domain.generated",
+  "fields" : [
+     { "name" : "id", "type" : ["null","string"] },
+     { "name" : "webRoomCode", "type" : "string" },
+     { "name" : "webRoomSessionCode", "type" : "string"},
+     { "name" : "webRoomServer", "type" : "string" },
+     { "name" : "webRoomServerCode", "type" : "string" },
+     { "name" : "userAccountId", "type" : "long" },
+     { "name" : "eventUserAccountId", "type" : "long" },
+     { "name" : "webRoomEventId", "type" : "int" },
+     { "name" : "resourceId", "type" : "long" },
+     { "name" : "resourceName", "type" : "string" },
+     { "name" : "participantEmail", "type" : "string" },
+     { "name" : "audioSyncCode", "type" : "string" },
+     { "name" : "audioBridgePlatformId", "type" : "string" },
+     { "name" : "audioBridgeId", "type" : "string" },
+     { "name" : "audioBridgeConfId", "type" : "string" },
+     { "name" : "audioBridgePartId", "type" : "string" },
+     { "name" : "audioDate", "type" : "string"},
+     { "name" : "audioAdditionalAttribute", "type" : "string"},
+     { "name" : "isModerator", "type" : "int" },
+     { "name" : "clientType", "type" : "string" },
+     { "name" : "maxConcurrentWebParticipant", "type" : "int"},
+     { "name" : "pexipConfId", "type" : "string" },
+     { "name" : "pexipPartId", "type" : "string" },
+     { "name" : "eventTs", "type" : "long", "logicalType": "timestamp-millis" }
+  ]
+}

@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 7867749862765397011L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.kumar.domain.generated\",\"fields\":[{\"name\":\"empId\",\"type\":\"int\"},{\"name\":\"empName\",\"type\":\"string\"},{\"name\":\"department\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\",\"default\":26}]}");
+  private static final long serialVersionUID = -4772416140943978554L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"com.kumar.domain.generated\",\"fields\":[{\"name\":\"empId\",\"type\":\"int\"},{\"name\":\"empName\",\"type\":\"string\"},{\"name\":\"department\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\",\"default\":26},{\"name\":\"empStatus\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Status\",\"symbols\":[\"ONLINE\",\"OFFLINE\",\"TRANSISENT\"]}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -75,6 +75,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    private java.lang.CharSequence empName;
    private java.lang.CharSequence department;
    private int age;
+   private com.kumar.domain.generated.Status empStatus;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -89,12 +90,14 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param empName The new value for empName
    * @param department The new value for department
    * @param age The new value for age
+   * @param empStatus The new value for empStatus
    */
-  public Employee(java.lang.Integer empId, java.lang.CharSequence empName, java.lang.CharSequence department, java.lang.Integer age) {
+  public Employee(java.lang.Integer empId, java.lang.CharSequence empName, java.lang.CharSequence department, java.lang.Integer age, com.kumar.domain.generated.Status empStatus) {
     this.empId = empId;
     this.empName = empName;
     this.department = department;
     this.age = age;
+    this.empStatus = empStatus;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -106,6 +109,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: return empName;
     case 2: return department;
     case 3: return age;
+    case 4: return empStatus;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -118,6 +122,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: empName = (java.lang.CharSequence)value$; break;
     case 2: department = (java.lang.CharSequence)value$; break;
     case 3: age = (java.lang.Integer)value$; break;
+    case 4: empStatus = (com.kumar.domain.generated.Status)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -191,6 +196,23 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
+   * Gets the value of the 'empStatus' field.
+   * @return The value of the 'empStatus' field.
+   */
+  public com.kumar.domain.generated.Status getEmpStatus() {
+    return empStatus;
+  }
+
+
+  /**
+   * Sets the value of the 'empStatus' field.
+   * @param value the value to set.
+   */
+  public void setEmpStatus(com.kumar.domain.generated.Status value) {
+    this.empStatus = value;
+  }
+
+  /**
    * Creates a new Employee RecordBuilder.
    * @return A new Employee RecordBuilder
    */
@@ -235,6 +257,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.CharSequence empName;
     private java.lang.CharSequence department;
     private int age;
+    private com.kumar.domain.generated.Status empStatus;
 
     /** Creates a new Builder */
     private Builder() {
@@ -263,6 +286,10 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.age = data().deepCopy(fields()[3].schema(), other.age);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
+      if (isValidValue(fields()[4], other.empStatus)) {
+        this.empStatus = data().deepCopy(fields()[4].schema(), other.empStatus);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      }
     }
 
     /**
@@ -286,6 +313,10 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       if (isValidValue(fields()[3], other.age)) {
         this.age = data().deepCopy(fields()[3].schema(), other.age);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.empStatus)) {
+        this.empStatus = data().deepCopy(fields()[4].schema(), other.empStatus);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -447,6 +478,46 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
       return this;
     }
 
+    /**
+      * Gets the value of the 'empStatus' field.
+      * @return The value.
+      */
+    public com.kumar.domain.generated.Status getEmpStatus() {
+      return empStatus;
+    }
+
+
+    /**
+      * Sets the value of the 'empStatus' field.
+      * @param value The value of 'empStatus'.
+      * @return This builder.
+      */
+    public com.kumar.domain.generated.Employee.Builder setEmpStatus(com.kumar.domain.generated.Status value) {
+      validate(fields()[4], value);
+      this.empStatus = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'empStatus' field has been set.
+      * @return True if the 'empStatus' field has been set, false otherwise.
+      */
+    public boolean hasEmpStatus() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'empStatus' field.
+      * @return This builder.
+      */
+    public com.kumar.domain.generated.Employee.Builder clearEmpStatus() {
+      empStatus = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public Employee build() {
@@ -456,6 +527,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         record.empName = fieldSetFlags()[1] ? this.empName : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.department = fieldSetFlags()[2] ? this.department : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.age = fieldSetFlags()[3] ? this.age : (java.lang.Integer) defaultValue(fields()[3]);
+        record.empStatus = fieldSetFlags()[4] ? this.empStatus : (com.kumar.domain.generated.Status) defaultValue(fields()[4]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -496,6 +568,14 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
     out.writeInt(this.age);
 
+    if (this.empStatus == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeEnum(this.empStatus.ordinal());
+    }
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -511,8 +591,15 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
       this.age = in.readInt();
 
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.empStatus = null;
+      } else {
+        this.empStatus = com.kumar.domain.generated.Status.values()[in.readEnum()];
+      }
+
     } else {
-      for (int i = 0; i < 4; i++) {
+      for (int i = 0; i < 5; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.empId = in.readInt();
@@ -528,6 +615,15 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
         case 3:
           this.age = in.readInt();
+          break;
+
+        case 4:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.empStatus = null;
+          } else {
+            this.empStatus = com.kumar.domain.generated.Status.values()[in.readEnum()];
+          }
           break;
 
         default:
